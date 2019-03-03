@@ -11,7 +11,7 @@ set number
 
 set ruler
 
-
+" disable arrow keys for navigation in Vim
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -21,5 +21,15 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+" Compile and run C++ programs without having to exit Vim
+" FileType cpp- detects the cpp file directly, (no need of manual regex).
+" nmap- used for mapping key while normal mode.
+" buffer- for the current buffer (in case of multiple splits).
+" <F5>- for mapping the 'F5' key.
+" And the command that executes is: :w | !g++ -o %:r % && ./%:r<CR>
+" In the above command, % is the file name (with extension),
+" while %:r is the file name(without extension),
+" <CR> stands for the "Enter" button (Carriage Return)
 
 autocmd FileType cpp nmap <buffer> <F5> :w<bar>!g++ -std=c++11 -o %:r % && ./%:r<CR>
