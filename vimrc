@@ -27,9 +27,10 @@ imap <right> <nop>
 " nmap- used for mapping key while normal mode.
 " buffer- for the current buffer (in case of multiple splits).
 " <F5>- for mapping the 'F5' key.
-" And the command that executes is: :w | !g++ -o %:r % && ./%:r<CR>
+" And the command that executes is: :w | !g++ -std=c++11 -o %:r % && ./%:r<CR>
 " In the above command, % is the file name (with extension),
 " while %:r is the file name(without extension),
 " <CR> stands for the "Enter" button (Carriage Return)
+" Press fn + F5 to execute in Vim
 
 autocmd FileType cpp nmap <buffer> <F5> :w<bar>!g++ -std=c++11 -o %:r % && ./%:r<CR>
